@@ -2,7 +2,7 @@
 //  EmailTest.swift
 //  FirebaseAuthenticationUITests
 //
-//  Created by moniruzzaman on 9/6/23.
+//  Created by Rz Rasel on 9/6/23.
 //
 
 import XCTest
@@ -13,11 +13,11 @@ class SignInTests: XCTestCase {
         continueAfterFailure = false
         XCUIApplication().launch()
     }
-    
+
     override func tearDown() {
         //
     }
-    
+
     func testSigninView() {
         SignInPage()
             .tapSignInButton()

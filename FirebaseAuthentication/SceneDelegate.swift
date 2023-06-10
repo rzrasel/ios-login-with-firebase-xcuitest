@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  FirebaseAuthentication
 //
-//  Created by moniruzzaman on 9/6/23.
+//  Created by Rz Rasel on 9/6/23.
 //
 
 import UIKit
@@ -49,4 +49,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

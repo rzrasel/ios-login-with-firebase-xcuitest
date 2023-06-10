@@ -2,7 +2,7 @@
 //  BaseTest.swift
 //  FirebaseAuthenticationUITests
 //
-//  Created by moniruzzaman on 10/6/23.
+//  Created by Rz Rasel on 10/6/23.
 //
 
 import XCTest
@@ -21,32 +21,32 @@ public class BaseTest {
         XCTAssert(rootElement.waitForExistence(timeout: timeout), "Page \(String(describing: self)) waited, but not loaded")
         completion?()
     }
-    
+
     // rootElement
     var rootElement: XCUIElement {
         fatalError("subclass should override rootElement")
     }
-    
+
     // Navigation bar
     func navBar(_ name: String) -> XCUIElement {
         return app.navigationBars[name]
     }
-    
+
     // Button
     func button(_ name: String) -> XCUIElement {
         return app.buttons[name]
     }
-    
+
     // TextField
     func textField(_ name: String) -> XCUIElement {
         return app.textFields[name]
     }
-    
+
     //TextView
     func textView(_ name: String) -> XCUIElement {
         return app.textViews[name]
     }
-    
+
     //Text
     func text(_ name: String) -> XCUIElement {
         return app.staticTexts[name]
