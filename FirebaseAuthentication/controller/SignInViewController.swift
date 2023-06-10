@@ -18,6 +18,32 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func onTapSignIn(_ sender: UIButton) {
+        let userModel: UserModel = UserModel(
+            username: "",
+            email: email?.text ?? "",
+            password: password.text ?? ""
+        )
+
+        if !Validator.isValidEmail(for: userModel.email) {
+            AlertManager.showInvalidEmailAlert(on: self)
+            return
+        }
+
+        if !Validator.isPasswordValid(for: userModel.password) {
+            AlertManager.showInvalidPasswordAlet(on: self)
+            return
+        }
+
+        AuthService.instant.signIn(with: userModel) { error in
+            if let error = error {
+                AlertManager.showSignInErrorAlet(on: self, with: error)
+                return
+            }
+
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let dashboardController = storyBoard.instantiateViewController(withIdentifier: "dashboardViewController") as! DashboardViewController
+            self.navigationController?.pushViewController(dashboardController, animated: true)
+        }
     }
 
 

@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserModel {
-    let username: String?
+    let username: Any
     let email: String
     let password: String
 }
